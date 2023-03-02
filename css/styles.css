@@ -302,14 +302,22 @@ button {
   padding-bottom: 96px;
 }
 
+@media screen and (max-width: 767px) {
   .advantages-list {
+    display: flex;
+    flex-direction: column;
     padding: 0px;
+    align-items: center;
+    justify-content: center;
   }
-  .advantages-list-item {
-    margin-bottom: 72px;
-  }
+  
+    .advantages-list-item {
+     margin-bottom: 72px;
+    }
+}
 
-@media screen and (min-width: 768px) {
+
+@media screen and (max-width: 1199px) {
   .advantages-list {
     display: flex;
     flex-wrap: wrap;
@@ -342,6 +350,7 @@ button {
   .advantages-section {
     padding-top: 120px;
     padding-bottom: 120px;
+    width: 1440px;
   }
 
   .advantages-list {
@@ -349,13 +358,13 @@ button {
     flex-wrap: nowrap;
     padding: 0px;
     gap: 24px;
+    justify-content: center;
+    align-items: center;
   }
   .advantages-list-item {
     margin: 0;
   }
-  .advantages-list > .advantages-list-item {
-    flex-basis: calc(100% / 4);
-  }
+
   .advantage-box {
     background-color: var(--button-section-bg-color);
     border-radius: 4px;
@@ -365,7 +374,6 @@ button {
     justify-content: center;
     align-items: center;
   }
-  
 }
 
 .subtitle {
@@ -385,11 +393,11 @@ button {
 }
 
 @media screen and (max-width: 767px) {
- .advantages-list-item {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-right: 0;
+  .advantages-list-item {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 0;
   }
 }
 .text {
@@ -401,14 +409,14 @@ button {
 }
 @media screen and (min-width: 768px) {
   .text {
-  max-width: 264px;
-}
+    max-width: 264px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .text {
-  font-weight: 400;
-  max-width: 264px;
-}
+    font-weight: 400;
+    max-width: 264px;
+  }
 }
 
 /* Section 2*/
@@ -449,9 +457,9 @@ button {
   text-align: center;
 }
 @media screen and (min-width: 768px) {
-  .workers-section { 
-  padding-bottom: 96px;
-}
+  .workers-section {
+    padding-bottom: 96px;
+  }
 }
 
 .list-bg {
@@ -461,8 +469,6 @@ button {
   border-radius: 0px 0px 4px 4px;
 }
 
-
-
 .workers-list {
   display: flex;
   flex-wrap: wrap;
@@ -470,7 +476,6 @@ button {
   row-gap: 72px;
   align-items: center;
   justify-content: center;
-  
 }
 
 @media screen and (min-width: 1200px) {
@@ -488,7 +493,7 @@ button {
 .workers-card {
   padding-top: 32px;
   padding-bottom: 32px;
-  min-width: 264px ;
+  min-width: 264px;
 }
 .name {
   font-size: 20px;
@@ -553,7 +558,6 @@ button {
     gap: 24px;
     row-gap: 72px;
   }
-  
 }
 
 @media screen and (min-width: 1200px) {
@@ -563,9 +567,7 @@ button {
   .customers-list {
     flex-wrap: nowrap;
     gap: 24px;
-    
   }
-  
 }
 
 .customers-logo {
@@ -725,13 +727,30 @@ button {
 
 .footer {
   background-color: var(--primary-bg-color);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    background-color: var(--primary-bg-color);
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
 
 .footer-container {
   display: flex;
 }
+@media screen and (max-width: 767px) {
+ .footer-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+}
+
 .footer-logo-box {
   margin-right: 120px;
 }
@@ -779,6 +798,15 @@ button {
 
 .footer-form-container {
   display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .footer-form {
   display: flex;
