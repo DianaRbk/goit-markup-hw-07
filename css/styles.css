@@ -44,11 +44,20 @@ body {
 }
 
 .container {
-  width: 1158px;
+  max-width: 428px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    min-width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    min-width: 1158px; }
 }
 
 .link {
@@ -66,11 +75,156 @@ button {
 /*Header*/
 
 .header-container {
+  margin-left: auto;
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-menu {
+    display: none;
+  }
 }
 .header-nav {
   display: flex;
   align-items: center;
+}
+
+
+/* Mobile menu */
+
+.mobile-menu-open-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+}
+.mobile-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--tertiary-bg-color);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: var(--transition-duration-and-func);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-container {
+  position: relative;
+  padding-left: 40px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.mobile-menu-nav-item {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: calc(40 / 36);
+  letter-spacing: 0.02em;
+  color: var(--primary-txt-color);
+}
+.mobile-menu-nav-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mobile-menu-navigation:hover,
+.mobile-menu-navigation:focus {
+  color: var(--accent-txt-color);
+  transition: var(--transition-duration-and-func);
+}
+
+.mobile-menu-phone {
+  display: inherit;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 36px;
+  line-height: calc(40 / 36);
+  letter-spacing: 0.02em;
+  color: var(--secondary-txt-color);
+  margin-bottom: 40px;
+}
+.mobile-menu-email {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+  letter-spacing: 0.02em;
+  color: var(--secondary-txt-color);
+}
+
+.mobile-menu-email:hover,
+.mobile-menu-email:focus,
+.mobile-menu-phone:hover,
+.mobile-menu-phone:focus {
+  color: var(--logo-txt-color);
+  transition: var(--transition-duration-and-func);
+}
+
+.mobile-menu-contacts-list {
+  display: block;
+  margin-top: 284px;
+  margin-bottom: 48px;
+}
+.mobile-menu-social-networks-list {
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.social-network-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--order-button-bg-color);
+}
+.social-network-link:hover,
+.social-network-link:focus {
+  background-color: var(--accent-bg-color);
+  transition: var(--transition-duration-and-func);
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-open {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+    .mobile-menu-open-btn {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width:1199px) {
+    .address-link {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -78,6 +232,7 @@ button {
     display: flex;
     align-items: center;
   }
+
 }
 
 .logo {
@@ -168,6 +323,7 @@ button {
 
 .hero-section-container {
   display: block;
+  width: 100%;
 }
 
 .hero-section {
@@ -314,9 +470,11 @@ button {
   .advantages-list-item {
     margin-bottom: 72px;
   }
+  .advantages-list-item:last-child {
+    margin-bottom: 0;
+  }
 }
 
-@media screen and (max-width: 1199px) {
   .advantages-list {
     display: flex;
     flex-wrap: wrap;
@@ -339,11 +497,10 @@ button {
     color: var(--primary-txt-color);
     margin-bottom: 8px;
   }
-}
-@media screen and (max-width: 1199px) {
+
   .advantage-box {
     display: none;
-  }
+  
 }
 @media screen and (min-width: 1200px) {
   .advantages-section {
@@ -826,6 +983,7 @@ button {
 
 .footer-form-container {
   display: block;
+  width: 100%;
 }
 
 @media screen and (max-width: 767px) {
@@ -852,10 +1010,10 @@ button {
 }
 
 .footer-user-mail-input {
+  width: 100%;
   background-color: var(--primary-bg-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  width: 100%;
   height: 40px;
   color: var(--tertiary-txt-color);
   padding: 7px 16px;
