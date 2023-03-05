@@ -919,10 +919,23 @@ button {
 .footer-logo-box {
   margin-right: 0;
 }
+@media screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-left: 108px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
+  .footer-container {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
   .footer-logo-box {
     margin-right: 120px;
-    margin-left: 140px;
   }
 }
 
@@ -983,21 +996,28 @@ button {
 
 .footer-form-container {
   display: block;
-  width: 100%;
+  margin-top: 72px;
 }
-
 @media screen and (max-width: 767px) {
   .footer-form-container {
-    margin-top: 72px;
+    width: 100%;
   }
 }
-
 .footer-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 16px;
+  width: inherit;
+}
+@media screen and (min-width: 768px) {
+  .footer-form {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 24px;
+    justify-content: center;
+  }
 }
 @media screen and (min-width: 1200px) {
   .footer-form {
@@ -1006,6 +1026,9 @@ button {
     align-items: flex-end;
     justify-content: end;
     gap: 24px;
+  }
+  .footer-form-container {
+    margin-top: 0;
   }
 }
 
@@ -1029,6 +1052,15 @@ button {
   font-weight: 400;
   font-size: 12px;
   line-height: calc(24 / 12);
+}
+
+.footer-user-mail-field {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .footer-user-mail-field {
+    width: 264px;
+  }
 }
 
 .footer-user-mail-field-desc {
@@ -1073,6 +1105,11 @@ button {
   background-color: var(--accent-bg-color);
   transition: var(--transition-duration-and-func);
 }
+@media screen and (min-width: 768px) {
+  .footer-subscribe-submit-btn {
+    align-self: last baseline;
+  }
+}
 
 /* Modal window */
 .backdrop {
@@ -1092,8 +1129,8 @@ button {
   pointer-events: none;
 }
 .modal {
-  width: 408px;
-  height: 576px;
+  width: 392px;
+  height: 586px;
   border-radius: 4px;
   background-color: rgba(252, 252, 252, 1);
   position: absolute;
@@ -1102,6 +1139,12 @@ button {
   transform: translate(-50%, -50%);
   padding: 72px 24px 24px;
 }
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+  }
+}
+
 .modal-close-btn {
   position: absolute;
   top: 24px;
