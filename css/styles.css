@@ -120,6 +120,7 @@ button {
   left: 0;
   z-index: 1000;
   background-color: var(--tertiary-bg-color);
+  overflow-y: auto;
 
   opacity: 0;
   visibility: hidden;
@@ -191,8 +192,7 @@ button {
 .mobile-menu-social-networks-list {
   display: flex;
   gap: 56px;
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .social-network-link {
@@ -414,7 +414,7 @@ button {
     padding-top: 188px;
     padding-bottom: 188px;
     text-align: center;
-    width: 1440px;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -504,7 +504,6 @@ button {
   .advantages-section {
     padding-top: 120px;
     padding-bottom: 120px;
-    width: 1440px;
   }
 
   .advantages-list {
@@ -636,7 +635,6 @@ button {
   .workers-section {
     padding-top: 120px;
     padding-bottom: 120px;
-    min-width: 1440px;
   }
   .workers-list {
     flex-wrap: nowrap;
@@ -715,9 +713,6 @@ button {
 }
 
 @media screen and (min-width: 1200px) {
-  .customers-section {
-    min-width: 1440px;
-  }
   .customers-list {
     flex-wrap: nowrap;
     gap: 24px;
@@ -883,7 +878,6 @@ button {
   background-color: var(--primary-bg-color);
   padding-top: 96px;
   padding-bottom: 96px;
-  width: 100%;
 }
 
 @media screen and (min-width: 1200px) {
@@ -891,8 +885,6 @@ button {
     background-color: var(--primary-bg-color);
     padding-top: 100px;
     padding-bottom: 100px;
-    min-width: 1440px;
-    margin: 0;
   }
 }
 
@@ -922,8 +914,9 @@ button {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 24px;
-    margin-left: 108px;
+  }
+  .footer-logo-box {
+    margin-right: 24px;
   }
 }
 
@@ -1126,6 +1119,7 @@ button {
   visibility: hidden;
   pointer-events: none;
 }
+
 .modal {
   width: 392px;
   height: 586px;
@@ -1136,6 +1130,11 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 72px 24px 24px;
+}
+@media screen and (max-width: 400px) {
+  .modal {
+    width: 90%;
+  }
 }
 @media screen and (min-width: 768px) {
   .modal {
